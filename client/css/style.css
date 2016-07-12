@@ -8,7 +8,7 @@
     width:100px;
     height:200px;
     overflow:hidden;
-    left:150px;
+    left:108px;
     -moz-transform-origin:left center;
     -ms-transform-origin:left center;
     -o-transform-origin:left center;
@@ -26,7 +26,7 @@
 .pie.big {
     width:200px;
     height:200px;
-    left:50px;
+    left:8px;
     -moz-transform-origin:center center;
     -ms-transform-origin:center center;
     -o-transform-origin:center center;
@@ -70,20 +70,24 @@
     left:100px;
     border-radius:0 100px 100px 0;
 }
+
+
+
 /*
   add colour to each piece.
 */
 .pie:nth-of-type(1):BEFORE,
 .pie:nth-of-type(1):AFTER {
-    background-color:blue;
+    background-color:#733EE3;
+
 }
 .pie:nth-of-type(2):AFTER,
 .pie:nth-of-type(2):BEFORE {
-    background-color:green;
+    background-color:#FDE379;
 }
 .pie:nth-of-type(3):AFTER,
 .pie:nth-of-type(3):BEFORE {
-    background-color:red;
+    background-color:#AAFFE3;
 }
 .pie:nth-of-type(4):AFTER,
 .pie:nth-of-type(4):BEFORE {
@@ -93,33 +97,8 @@
   now rotate each piece based on their cumulative starting
   position
 */
-.pie[data-start="30"] {
-    -moz-transform: rotate(30deg); /* Firefox */
-    -ms-transform: rotate(30deg); /* IE */
-    -webkit-transform: rotate(30deg); /* Safari and Chrome */
-    -o-transform: rotate(30deg); /* Opera */
-    transform:rotate(30deg);
-}
-.pie[data-start="60"] {
-    -moz-transform: rotate(60deg); /* Firefox */
-    -ms-transform: rotate(60deg); /* IE */
-    -webkit-transform: rotate(60deg); /* Safari and Chrome */
-    -o-transform: rotate(60deg); /* Opera */
-    transform:rotate(60deg);
-}
-.pie[data-start="100"] {
-    -moz-transform: rotate(100deg); /* Firefox */
-    -ms-transform: rotate(100deg); /* IE */
-    -webkit-transform: rotate(100deg); /* Safari and Chrome */
-    -o-transform: rotate(100deg); /* Opera */
-    transform:rotate(100deg);
-}
-/*
-  and rotate the amount of the pie that's showing.
 
-  NOTE: add an extra degree to all but the final piece,
-  to fill in unsightly gaps.
-*/
+
 .pie[data-value="30"]:BEFORE {
     -moz-transform: rotate(31deg); /* Firefox */
     -ms-transform: rotate(31deg); /* IE */
@@ -141,6 +120,25 @@
     -o-transform: rotate(260deg); /* Opera */
     transform:rotate(260deg);
 }
+
+.pie[data-value="360"]:BEFORE {
+    -moz-transform: rotate(360deg); /* Firefox */
+    -ms-transform: rotate(360deg); /* IE */
+    -webkit-transform: rotate(360deg); /* Safari and Chrome */
+    -o-transform: rotate(360deg); /* Opera */
+    transform:rotate(360deg);
+}
+
+
+.pie[data-start="60"] {
+    -moz-transform: rotate(180deg); /* Firefox */
+    -ms-transform: rotate(180deg); /* IE */
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    -o-transform: rotate(180deg); /* Opera */
+    transform:rotate(50deg);
+}
+
+
 /*
 NOTE: you could also apply custom classes (i.e. .s0 .v30)
 but if the CSS3 attr() function proposal ever gets implemented,
@@ -154,3 +152,19 @@ the following:
    transform:rotate(attr(data-value,deg,0);
 }
 */
+#eventTracker{
+
+    width:200px;
+    height:200px;
+    background-color: rgba(0, 128, 0, 0);
+    left:8px;
+    z-index:999;
+    position:absolute;
+
+}
+
+#Root{
+    width:200px;
+    height:200px;
+    background-color:#4A4464;
+}
