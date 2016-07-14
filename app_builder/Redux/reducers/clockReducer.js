@@ -1,7 +1,7 @@
 
-export default function clockReducer(clock=[],action){
+export default function clockReducer(clockState=[],action){
     let new_login_state = [];
-    var array =clock;
+    var array =clockState;
     var temp;
     switch(action.type){
 
@@ -14,6 +14,6 @@ export default function clockReducer(clock=[],action){
 
         default:
             // console.log("in login")
-            return clock
+            return clockState
     }
 }

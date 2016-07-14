@@ -93,6 +93,41 @@
 .pie:nth-of-type(4):BEFORE {
     background-color:orange;
 }
+
+.pie:nth-of-type(5):AFTER,
+.pie:nth-of-type(5):BEFORE {
+    background-color: #ffa078;
+}
+
+.pie:nth-of-type(6):AFTER,
+.pie:nth-of-type(6):BEFORE {
+    background-color: #91dbff;
+}
+
+.pie:nth-of-type(7):AFTER,
+.pie:nth-of-type(7):BEFORE {
+    background-color: #ff8487;
+}
+
+.pie:nth-of-type(8):AFTER,
+.pie:nth-of-type(8):BEFORE {
+    background-color: #e597ff;
+}
+
+.pie:nth-of-type(9):AFTER,
+.pie:nth-of-type(9):BEFORE {
+    background-color: #fff5d7;
+}
+
+.pie:nth-of-type(10):AFTER,
+.pie:nth-of-type(10):BEFORE {
+    background-color: #ff5e6a;
+}
+
+.pie:nth-of-type(11):AFTER,
+.pie:nth-of-type(11):BEFORE {
+    background-color: #c6cfff;
+}
 /*
   now rotate each piece based on their cumulative starting
   position

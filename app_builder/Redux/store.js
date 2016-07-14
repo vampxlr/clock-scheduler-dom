@@ -25,6 +25,6 @@ if(global.environment=='test'){
 }
 
 
-export default function configureStore( initialState={clock:[]} ){
+export default function configureStore( initialState={clockState:[],pieState:[]} ){
     return finalCreateStore(rootReducer,initialState)
 }

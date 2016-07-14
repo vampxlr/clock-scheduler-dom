@@ -2,7 +2,7 @@ import React , { Component } from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import actions from '../redux/action'
-
+import {radiansToDegrees,pixelToDegree} from '../utils/pieGeometry'
 
 
 class Root extends Component {
@@ -13,6 +13,7 @@ class Root extends Component {
         this.state = {
             pieObjects: [
                 {
+                    id:0,
                     data_start:0,
                     data_value:360,
                     color:"red",
@@ -24,68 +25,6 @@ class Root extends Component {
         console.log(this.state)
     };
 
-
-radiansToDegrees(rad) {
-    return (rad / Math.PI)*180;
-}
-
-    pixelToDegree(x,y){
-    var centerY=100;
-    var centerX=100;
-
-    var delY = y - centerY
-    var delX = x - centerX
-    console.log("delX: " + delX)
-    console.log("delY: " + delY)
-    var quadrant = 1;
-
-
-
-    var gradient = delY/delX
-    console.log("gradient: " + gradient)
-
-        var radSlope = Math.atan(gradient)
-   var degrees = this.radiansToDegrees(radSlope)
-
-
-
-    if(delY>0 && delX>0)
-    {
-        quadrant = 1
-        console.log("degrees: " + degrees)
-        console.log("quadrant: " + quadrant)
-        return degrees
-    }
-
-    if(delY>=0 && delX<0)
-    {
-        quadrant = 2
-        console.log("degrees: " + degrees + 180)
-        console.log("quadrant: " + quadrant)
-        return degrees + 180
-
-    }
-    if(delY<0 && delX<0)
-    {
-        quadrant = 3
-        console.log("degrees: " + degrees + 180)
-        console.log("quadrant: " + quadrant)
-        return degrees + 180
-
-    }
-    if(delY<0 && delX>0)
-    {
-        quadrant = 4
-        console.log("degrees: " + degrees)
-        console.log("quadrant: " + quadrant)
-        return degrees
-    }
-        console.log("degrees: " + degrees)
-        console.log("quadrant: " + quadrant)
-
-    return degrees
-
-}
 
 
 
@@ -127,14 +66,19 @@ radiansToDegrees(rad) {
     }
     componentDidMount(){
 
+        this.props.actions.pie_local_getPieState()
         var cbs = this.state.circle;
         var data_start = 0;
         var data_value = 360;
         document.styleSheets[0].insertRule('.pie[data-start="'+data_start+'"] { -moz-transform: rotate(' + data_start + 'deg); /* Firefox */ -ms-transform: rotate(' + data_start + 'deg); /* IE */ -webkit-transform: rotate(' + data_start + 'deg); /* Safari and Chrome */ -o-transform: rotate(' + data_start + 'deg); /* Opera */transform:rotate(' + data_start + 'deg);}', 0);
         document.styleSheets[0].insertRule('.pie[data-value="'+data_value + '"]:BEFORE { -moz-transform: rotate(' + data_value + 'deg); /* Firefox */ -ms-transform: rotate(' + data_value + 'deg); /* IE */ -webkit-transform: rotate(' + data_value + 'deg); /* Safari and Chrome */ -o-transform: rotate(' + data_value + 'deg); /* Opera */transform:rotate(' + data_value + 'deg);}', 1);
-        cbs.push(<div className="pie big" data-start={data_start} data-value={data_value}></div>);
-        this.setState({circle: cbs});
-        this.renderPieAngle(180)
+       cbs.push(<div className="pie big" data-start={data_start} data-value={data_value}></div>);
+       this.setState({circle: cbs});
+        //this.renderPieAngle(180)
+
+
+
+
     }
     componentWillMount() {
 
@@ -149,8 +93,8 @@ radiansToDegrees(rad) {
         var y = e.nativeEvent.offsetY;
         console.log("x: " +x)
         console.log("y: " +y)
-        console.log(this.pixelToDegree(x,y))
-        this.renderPieAngle(this.pixelToDegree(x,y)+90)
+        console.log(pixelToDegree(x,y))
+        this.renderPieAngle(pixelToDegree(x,y))
     }
 
 
@@ -160,8 +104,8 @@ radiansToDegrees(rad) {
 
             {this.state.circle}
 
-            <div id="eventTracker" onClick={this.handleClick.bind(this)}>
-            </div>
+                <div id="eventTracker" onClick={this.handleClick.bind(this)}>
+                </div>
             </div>
         )
     }

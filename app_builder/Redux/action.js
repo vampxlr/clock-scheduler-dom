@@ -1,5 +1,45 @@
 
+
 let actions = {
+
+    pie_local_getPieState: function pie_local_getPieState(){
+        return{
+            type:"PIE_LOCAL_GET_PIE_STATE"
+        }
+
+    },
+    pie_local_addPieToState: function pie_local_addPieToState(startingAngle,angleValue,color,className,amOrPm){
+        return{
+            type:"PIE_LOCAL_ADD_PIE_TO_STATE",
+            startingAngle:startingAngle,
+            angleValue:angleValue,
+            color:color,
+            className:className,
+            amOrPm:amOrPm
+        }
+
+    },
+
+    pie_local_updatePieFromState: function pie_local_updatePieFromState(id,startingAngle,angleValue,color,className,amOrPm){
+        return{
+            type:"PIE_LOCAL_UPDATE_PIE_FROM_STATE",
+            id:id,
+            startingAngle:startingAngle,
+            angleValue:angleValue,
+            color:color,
+            className:className,
+            amOrPm:amOrPm
+        }
+
+    },
+
+    pie_local_deletePieFromState: function pie_local_deletePieFromState(id){
+        return{
+            type:"PIE_LOCAL_DELETE_PIE_FROM_STATE",
+            id:id
+        }
+
+    },
 
 
     workspace_local_setActiveWorkspace: function workspace_local_setActiveWorkspace(id){

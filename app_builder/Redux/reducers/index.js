@@ -1,11 +1,12 @@
 import {combineReducers} from 'redux'
 
 import clockReducer from './clockReducer'
+import pieReducer from './pieReducer'
 
 const rootReducer = combineReducers({
 
-    clock:clockReducer,
-
+    clockState:clockReducer,
+    pieState:pieReducer
 })
 
 export default rootReducer
