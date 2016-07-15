@@ -12,8 +12,11 @@ export default function pieReducer(pieState=[],action){
 
         case'PIE_LOCAL_GET_PIE_STATE':
             new_pieState= getLocal("pieState")
+            console.log("getLocal")
+            console.log(getLocal("pieState"))
             return new_pieState;
         case'PIE_LOCAL_ADD_PIE_TO_STATE':
+            console.log("inside add pie state")
             let startingAngle=action.startingAngle
             let angleValue=action.angleValue
             let color = action.color
@@ -39,6 +42,8 @@ export default function pieReducer(pieState=[],action){
                 }
 
                 saveLocal("pieState",new_pieState)
+            console.log("getLocal")
+            console.log(getLocal("pieState"))
             return new_pieState;
 
 

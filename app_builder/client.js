@@ -9,39 +9,12 @@ import { Provider } from 'react-redux'
 
 
     let initialState = {
-        todos_repository:[
+        pieState:[
             {
-                id:0,
-                remote:false,
-                todos:[
-                    {
-                        id:0,
-                        text:"something",
-                        completed:true
-                    }
-                ],
-                workspace_id:null,
-                workspace_name:"local"
-            }
-        ],
-        login:[
-                {
-                    status:false
-                }
-            ],
-        workspaceData:[
+                id:0
 
-            {
-                id:0,
-                name:"Local Workspace",
-                active:true
             }
         ]
-
-
-
-
-
 
     }
 
