@@ -41,6 +41,13 @@ let actions = {
 
     },
 
+    pie_local_deleteAllPieFromState: function pie_local_deleteAllPieFromState(){
+        return{
+            type:"PIE_LOCAL_DELETE_ALL_PIE_FROM_STATE"
+        }
+
+    },
+
 
     workspace_local_setActiveWorkspace: function workspace_local_setActiveWorkspace(id){
         return{

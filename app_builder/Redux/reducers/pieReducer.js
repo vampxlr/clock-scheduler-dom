@@ -60,6 +60,15 @@ export default function pieReducer(pieState=[],action){
             saveLocal("pieState",new_pieState)
             return new_pieState
 
+        case'PIE_LOCAL_DELETE_ALL_PIE_FROM_STATE':
+
+
+            new_pieState = [];
+
+
+
+            saveLocal("pieState",new_pieState)
+            return new_pieState
 
         default:
             // console.log("in login")
