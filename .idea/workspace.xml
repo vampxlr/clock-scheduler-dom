@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0525602-05f4-4e2e-a216-3f58865de524" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/css/pieStartValues.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/css/pieValues.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/css/pieValues.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app_builder/Redux/reducers/selectionReducer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_builder/Redux/action.js" afterPath="$PROJECT_DIR$/app_builder/Redux/action.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_builder/Redux/reducers/index.js" afterPath="$PROJECT_DIR$/app_builder/Redux/reducers/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_builder/Redux/reducers/pieReducer.js" afterPath="$PROJECT_DIR$/app_builder/Redux/reducers/pieReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_builder/Redux/store.js" afterPath="$PROJECT_DIR$/app_builder/Redux/store.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_builder/components/Root.js" afterPath="$PROJECT_DIR$/app_builder/components/Root.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/bundle.js" afterPath="$PROJECT_DIR$/client/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/style.css" afterPath="$PROJECT_DIR$/client/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
     </list>
     <ignored path="clock-scheduler-dom.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,72 +32,14 @@
       <file leaf-file-name="Root.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app_builder/components/Root.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50086653">
-              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.71577126">
+              <caret line="122" column="96" selection-start-line="122" selection-start-column="96" selection-end-line="122" selection-end-column="96" />
               <folding>
+                <element signature="n#!!block;n#renderPieWithReduxPieState#0;n#Root#0" expanded="false" />
                 <element signature="n#!!block;n#renderLastPieWithReduxPieState#0;n#Root#0" expanded="false" />
-                <marker date="1468966070354" expanded="true" signature="4484:4486" placeholder="//..." />
+                <element signature="n#!!block;n#addPieToReduxStateWithAngle#0;n#Root#0" expanded="false" />
+                <marker date="1469056348891" expanded="true" signature="8974:8976" placeholder="//..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pieGeometry.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app_builder/utils/pieGeometry.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="122" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="162" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pieValues.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/pieValues.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8433735">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769">
-              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pieValues.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/pieValues.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="70478" selection-start-line="0" selection-start-column="70478" selection-end-line="0" selection-end-column="70478" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pieStartValues.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/pieStartValues.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -109,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/app_builder/Redux/action.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+              <caret line="58" column="50" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -119,17 +58,37 @@
         <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/pieReducer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app_builder/client.js">
+      <file leaf-file-name="selectionReducer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/selectionReducer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <caret line="12" column="55" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_builder/Redux/store.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,17 +116,18 @@
         <option value="$PROJECT_DIR$/app_builder/components/root.js" />
         <option value="$PROJECT_DIR$/app_builder/utils/pieGeometry.js" />
         <option value="$PROJECT_DIR$/app_builder/Redux/reducers/clockReducer.js" />
-        <option value="$PROJECT_DIR$/app_builder/Redux/reducers/index.js" />
-        <option value="$PROJECT_DIR$/app_builder/Redux/store.js" />
         <option value="$PROJECT_DIR$/app_builder/utils/webStorage.js" />
         <option value="$PROJECT_DIR$/app_builder/client.js" />
-        <option value="$PROJECT_DIR$/app_builder/Redux/reducers/pieReducer.js" />
-        <option value="$PROJECT_DIR$/app_builder/Redux/action.js" />
         <option value="$PROJECT_DIR$/client/css/style.css" />
         <option value="$PROJECT_DIR$/client/css/pieStartValues.css" />
         <option value="$PROJECT_DIR$/client/css/pieValues.css" />
         <option value="$PROJECT_DIR$/client/css/pieValues.min.css" />
         <option value="$PROJECT_DIR$/client/index.html" />
+        <option value="$PROJECT_DIR$/app_builder/Redux/reducers/pieReducer.js" />
+        <option value="$PROJECT_DIR$/app_builder/Redux/reducers/index.js" />
+        <option value="$PROJECT_DIR$/app_builder/Redux/store.js" />
+        <option value="$PROJECT_DIR$/app_builder/Redux/action.js" />
+        <option value="$PROJECT_DIR$/app_builder/Redux/reducers/selectionReducer.js" />
         <option value="$PROJECT_DIR$/app_builder/components/Root.js" />
       </list>
     </option>
@@ -210,7 +170,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -353,7 +313,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -362,6 +322,11 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="C:/clock-scheduler" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\clock-scheduler-dom\app_builder\Redux\reducers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -467,19 +432,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app_builder/utils/webStorage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_builder/client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -493,8 +450,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
           <folding>
+            <element signature="n#!!block;n#renderPieWithReduxPieState#0;n#Root#0" expanded="false" />
             <element signature="n#!!block;n#renderLastPieWithReduxPieState#0;n#Root#0" expanded="false" />
-            <marker date="1468966070354" expanded="true" signature="4484:4486" placeholder="//..." />
+            <element signature="n#!!block;n#addPieToReduxStateWithAngle#0;n#Root#0" expanded="false" />
+            <marker date="1469056348891" expanded="true" signature="8974:8976" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -519,7 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="17" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -536,8 +494,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
           <folding>
+            <element signature="n#!!block;n#renderPieWithReduxPieState#0;n#Root#0" expanded="false" />
             <element signature="n#!!block;n#renderLastPieWithReduxPieState#0;n#Root#0" expanded="false" />
-            <marker date="1468966070354" expanded="true" signature="4484:4486" placeholder="//..." />
+            <element signature="n#!!block;n#addPieToReduxStateWithAngle#0;n#Root#0" expanded="false" />
+            <marker date="1469056348891" expanded="true" signature="8974:8976" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -562,7 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -579,8 +538,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#renderPieWithReduxPieState#0;n#Root#0" expanded="false" />
             <element signature="n#!!block;n#renderLastPieWithReduxPieState#0;n#Root#0" expanded="false" />
-            <marker date="1468966070354" expanded="true" signature="4484:4486" placeholder="//..." />
+            <element signature="n#!!block;n#addPieToReduxStateWithAngle#0;n#Root#0" expanded="false" />
+            <marker date="1469056348891" expanded="true" signature="8974:8976" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -619,8 +580,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#renderPieWithReduxPieState#0;n#Root#0" expanded="false" />
             <element signature="n#!!block;n#renderLastPieWithReduxPieState#0;n#Root#0" expanded="false" />
-            <marker date="1468966070354" expanded="true" signature="4484:4486" placeholder="//..." />
+            <element signature="n#!!block;n#addPieToReduxStateWithAngle#0;n#Root#0" expanded="false" />
+            <marker date="1469056348891" expanded="true" signature="8974:8976" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -659,8 +622,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#renderPieWithReduxPieState#0;n#Root#0" expanded="false" />
             <element signature="n#!!block;n#renderLastPieWithReduxPieState#0;n#Root#0" expanded="false" />
-            <marker date="1468966070354" expanded="true" signature="4484:4486" placeholder="//..." />
+            <element signature="n#!!block;n#addPieToReduxStateWithAngle#0;n#Root#0" expanded="false" />
+            <marker date="1469056348891" expanded="true" signature="8974:8976" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -692,8 +657,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#renderPieWithReduxPieState#0;n#Root#0" expanded="false" />
             <element signature="n#!!block;n#renderLastPieWithReduxPieState#0;n#Root#0" expanded="false" />
-            <marker date="1468966070354" expanded="true" signature="4484:4486" placeholder="//..." />
+            <element signature="n#!!block;n#addPieToReduxStateWithAngle#0;n#Root#0" expanded="false" />
+            <marker date="1469056348891" expanded="true" signature="8974:8976" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -718,8 +685,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#renderPieWithReduxPieState#0;n#Root#0" expanded="false" />
             <element signature="n#!!block;n#renderLastPieWithReduxPieState#0;n#Root#0" expanded="false" />
-            <marker date="1468966070354" expanded="true" signature="4484:4486" placeholder="//..." />
+            <element signature="n#!!block;n#addPieToReduxStateWithAngle#0;n#Root#0" expanded="false" />
+            <marker date="1469056348891" expanded="true" signature="8974:8976" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -774,33 +743,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_builder/Redux/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/clockReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33663365">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_builder/utils/webStorage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="17" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,22 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_builder/Redux/action.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/pieReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -846,7 +776,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
           <folding />
         </state>
@@ -854,7 +784,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/pieValues.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8433735">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
@@ -862,7 +792,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
+        <state vertical-scroll-proportion="0.0">
           <caret line="122" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="162" selection-end-column="1" />
           <folding />
         </state>
@@ -870,19 +800,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app_builder/utils/pieGeometry.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.25247526">
           <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/clockReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33663365">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_builder/Redux/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_builder/Redux/action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="50" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/pieReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_builder/Redux/reducers/selectionReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_builder/components/Root.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50086653">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.71577126">
+          <caret line="122" column="96" selection-start-line="122" selection-start-column="96" selection-end-line="122" selection-end-column="96" />
           <folding>
+            <element signature="n#!!block;n#renderPieWithReduxPieState#0;n#Root#0" expanded="false" />
             <element signature="n#!!block;n#renderLastPieWithReduxPieState#0;n#Root#0" expanded="false" />
-            <marker date="1468966070354" expanded="true" signature="4484:4486" placeholder="//..." />
+            <element signature="n#!!block;n#addPieToReduxStateWithAngle#0;n#Root#0" expanded="false" />
+            <marker date="1469056348891" expanded="true" signature="8974:8976" placeholder="//..." />
           </folding>
         </state>
       </provider>

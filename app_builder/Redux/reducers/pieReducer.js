@@ -6,6 +6,10 @@ function getId(pies) {
         },-1)+1
 }
 
+function filterId(obj){
+    return obj.id;
+}
+
 export default function pieReducer(pieState=[],action){
     let new_pieState = [...pieState];
     switch(action.type){
@@ -15,6 +19,13 @@ export default function pieReducer(pieState=[],action){
             console.log("getLocal")
             console.log(getLocal("pieState"))
             return new_pieState;
+
+        case'PIE_LOCAL_GET_PIE_OBJECT_BY_ID':
+            new_pieState= getLocal("pieState")
+            return new_pieState.filter(function(v) {
+                return v.id === action.id;
+            });
+
         case'PIE_LOCAL_ADD_PIE_TO_STATE':
             console.log("inside add pie state")
             let startingAngle=action.startingAngle
@@ -69,6 +80,7 @@ export default function pieReducer(pieState=[],action){
 
             saveLocal("pieState",new_pieState)
             return new_pieState
+
 
         default:
             // console.log("in login")

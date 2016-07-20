@@ -48,6 +48,30 @@ let actions = {
 
     },
 
+    selection_local_selectPieObjectByAngle: function selection_local_selectPieObjectByAngle(angle){
+        return{
+            type:"SELECTION_LOCAL_SELECT_PIE_OBJECT_BY_ANGLE",
+            angle:angle
+        }
+
+    },
+
+    selection_local_updateSelectedPiesAngleByAngle: function selection_local_updateSelectedPiesAngleByAngle(angle){
+        return{
+            type:"SELECTION_LOCAL_UPDATE_SELECTED_PIES_ANGLE_BY_ANGLE",
+            angle:angle
+        }
+
+    },
+
+    selection_local_selectPieObjectById: function selection_local_selectPieObjectById(id){
+        return{
+            type:"SELECTION_LOCAL_SELECT_PIE_OBJECT_BY_ID",
+            id:id
+        }
+
+    },
+
 
     workspace_local_setActiveWorkspace: function workspace_local_setActiveWorkspace(id){
         return{
