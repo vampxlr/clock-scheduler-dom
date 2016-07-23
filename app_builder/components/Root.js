@@ -5,6 +5,20 @@ import actions from '../redux/action'
 import {radiansToDegrees,pixelToDegree} from '../utils/pieGeometry'
 
 
+Array.prototype.subtractArrayById = function(pieStateSelected) {
+    let pieStateAllExceptSelected = this;
+    for(var key in pieStateSelected){
+
+        pieStateAllExceptSelected = pieStateAllExceptSelected.filter(function(v){
+            return v.id != pieStateSelected[key].id
+        })
+
+    }
+    return pieStateAllExceptSelected
+
+
+};
+
 function randomColor(){
     var allowed = "ABCDEF0123456789", S = "#";
 
@@ -14,9 +28,139 @@ function randomColor(){
     return S;
 }
 
+
+
 class Root extends Component {
 
+    deleteAllAddedStylesheetRef(){
+        var styleSheetRef= this.state.styleSheetRef
 
+        var length = styleSheetRef.length
+        for(var i =0;i<length;i++){
+            console.log("delete ref: ")
+            console.log(i)
+            document.styleSheets[0].deleteRule(styleSheetRef.pop().styleSheetRef)
+        }
+        console.log("styleSheetRef: ")
+        console.log(styleSheetRef)
+        console.log("document.styleSheets[0].cssRules")
+        console.log(document.styleSheets[0].cssRules)
+        console.log("document.styleSheets[0].cssRules.length")
+        console.log(document.styleSheets[0].cssRules.length)
+        this.setState({styleSheetRef: styleSheetRef});
+
+    }
+
+    addVisualPiesByPieState(pieState,addToExisting=false,pieColor=false){
+        pieState.reverse()
+        var styleSheetRef= this.state.styleSheetRef
+        var cbs = [...this.state.circle];
+
+        if(true){
+            console.log("not addToExisting")
+            console.log("cbs inside not addToExisting")
+            console.log(cbs)
+
+            cbs= []
+            cbs.push(<div key={0} className="pie big" data-start={0} data-value={360}></div>);
+            this.setState({circle: [...cbs]});
+            console.log("cbs inside addToExisting after insertion of big pie")
+            console.log(cbs)
+
+        }
+
+    console.log("cbs before pieState adding")
+    console.log(cbs)
+        for(var key in pieState) {
+
+            if (pieState.hasOwnProperty(key)) {
+                console.log("inside pie State loop")
+                console.log(pieState)
+                console.log(key)
+                var styleSheetRefObject = {
+                    objectId :pieState[key].id,
+                    styleSheetRef: document.styleSheets[0].cssRules.length
+                }
+
+                if(pieColor==false){
+                    document.styleSheets[0].insertRule('.pie[data-key="' + (parseInt(pieState[key].id)+1) +'"]:BEFORE { background-color:'+ pieState[key].color+' }', document.styleSheets[0].cssRules.length)
+
+                }else
+                {
+                    document.styleSheets[0].insertRule('.pie[data-key="' + (parseInt(pieState[key].id)+1) +'"]:BEFORE { background-color:'+ pieColor+' }', document.styleSheets[0].cssRules.length)
+
+                }
+
+                styleSheetRef.push(styleSheetRefObject);
+
+
+                styleSheetRefObject = {
+                    objectId :pieState[key].id,
+                    styleSheetRef: document.styleSheets[0].cssRules.length
+                }
+
+                if(pieColor==false){
+                    document.styleSheets[0].insertRule('.pie[data-key="' + (parseInt(pieState[key].id)+1) +'"]:AFTER { background-color:'+ pieState[key].color+' }', document.styleSheets[0].cssRules.length)
+
+                }else
+                {
+                    document.styleSheets[0].insertRule('.pie[data-key="' + (parseInt(pieState[key].id)+1) +'"]:AFTER { background-color:'+ pieColor+' }', document.styleSheets[0].cssRules.length)
+
+                }
+
+                styleSheetRef.push(styleSheetRefObject);
+
+
+                if(pieState[key].angleValue>180){
+                    cbs.push(<div id={"pie big"+(parseInt(pieState[key].id)+1)} data-key={parseInt(pieState[key].id)+1} key={parseInt(pieState[key].id)+1} className={pieState[key].className} data-start={pieState[key].startingAngle} data-value={pieState[key].angleValue}></div>);
+
+                } else {
+                    cbs.push(<div id={"pie"+(parseInt(pieState[key].id)+1)} data-key={parseInt(pieState[key].id)+1} key={parseInt(pieState[key].id)+1} className={pieState[key].className} data-start={pieState[key].startingAngle} data-value={pieState[key].angleValue}></div>);
+
+                }
+            }
+
+
+        }
+        var array_of_key = []
+        var location_of_conflict=[]
+        for(var key_cbs in cbs){
+            if (pieState.hasOwnProperty(key)) {
+                console.log("cbs loop************************************")
+                console.log("key_cbs")
+                console.log(key_cbs)
+                console.log("cbs[key_cbs]")
+                console.log(cbs[key_cbs])
+                for (var key_array in array_of_key) {
+                    if (pieState.hasOwnProperty(key)) {
+                        console.log("array_of_key loop!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                        console.log("key_array")
+                        console.log(key_array)
+                        console.log("array_of_key[key_array]")
+                        console.log(array_of_key[key_array])
+                        console.log(array_of_key[key_array].key + " ----- " + cbs[key_cbs].key)
+                        if (array_of_key[key_array].key == cbs[key_cbs].key) {
+                            console.log("__________________****************________________________")
+                            console.log(key_cbs)
+                            location_of_conflict.push(key_cbs)
+                        }
+                    }
+
+                }
+                array_of_key.push(cbs[key_cbs])
+            }
+
+        }
+
+        console.log("before setting circle stylesheetRef")
+        console.log(styleSheetRef)
+        console.log("before setting circle CBS")
+        console.log([...cbs])
+
+        this.setState({styleSheetRef: styleSheetRef});
+        this.setState({circle: [...cbs]});
+
+    }
 
     constructor(props, context) {
         super(props, context);
@@ -37,75 +181,38 @@ class Root extends Component {
 
     renderPieWithReduxPieState(pieStateMother){
         let pieState = [...pieStateMother]
-        console.log(pieState)
-        pieState.reverse()
-        console.log(pieState)
-        var cbs = this.state.circle;
+        this.deleteAllAddedStylesheetRef()
 
-        console.log("before for loop before setting empty array")
-        console.log(cbs)
-      var styleSheetRef= this.state.styleSheetRef
-        cbs=[]
-        var data_start = 0;
-        var data_value = 360;
-        var lenght = styleSheetRef.length
-        for(var i =0;i<lenght;i++){
-            console.log("delete ref: ")
-            console.log(i)
-            document.styleSheets[0].deleteRule(styleSheetRef.pop().styleSheetRef)
-        }
-        console.log("styleSheetRef: ")
-        console.log(styleSheetRef)
-        console.log("document.styleSheets[0].cssRules")
-        console.log(document.styleSheets[0].cssRules)
-        console.log("document.styleSheets[0].cssRules.length")
-        console.log(document.styleSheets[0].cssRules.length)
+        this.addVisualPiesByPieState([...pieState])
 
-        cbs.push(<div key={0} className="pie big" data-start={data_start} data-value={data_value}></div>);
-
-        for(var key in pieState) {
-            var styleSheetRefObject = {
-                objectId :pieState[key].id,
-                styleSheetRef: document.styleSheets[0].cssRules.length
-            }
-            document.styleSheets[0].insertRule('.pie[data-key="' + (parseInt(key)+1) +'"]:BEFORE { background-color:'+pieState[key].color+' }', document.styleSheets[0].cssRules.length)
-
-            styleSheetRef.push(styleSheetRefObject);
-
-
-            styleSheetRefObject = {
-                objectId :pieState[key].id,
-                styleSheetRef: document.styleSheets[0].cssRules.length
-            }
-            document.styleSheets[0].insertRule('.pie[data-key="' + (parseInt(key)+1) +'"]:AFTER { background-color:'+pieState[key].color+' }', document.styleSheets[0].cssRules.length)
-
-            styleSheetRef.push(styleSheetRefObject);
-
-
-            if(pieState[key].angleValue>180){
-                cbs.push(<div id={"pie big"+(parseInt(key)+1)} data-key={parseInt(key)+1} key={parseInt(key)+1} className={pieState[key].className} data-start={pieState[key].startingAngle} data-value={pieState[key].angleValue}></div>);
-
-            } else {
-                cbs.push(<div id={"pie"+(parseInt(key)+1)} data-key={parseInt(key)+1} key={parseInt(key)+1} className={pieState[key].className} data-start={pieState[key].startingAngle} data-value={pieState[key].angleValue}></div>);
-
-            }
-        }
-        console.log("before setting circle")
-        console.log(styleSheetRef)
-        this.setState({styleSheetRef: styleSheetRef});
-        this.setState({circle: cbs});
     }
 
 
 
-    renderSelectiedPiesWithReduxSelectionState(pieStateMother){
+    renderSelectedPiesWithReduxSelectionState(pieStateAllMother,pieStateSelectedMother){
         console.log("inside selection state")
-        let pieState = [...pieStateMother]
-        console.log(pieState)
-        pieState.reverse()
-        console.log(pieState)
-        var cbs = this.state.circle;
+        let pieStateAll = [...pieStateAllMother]
+        let pieStateAllExceptSelected = [...pieStateAllMother] // still contains all
+        let pieStateSelected = [...pieStateSelectedMother]
 
+        pieStateAllExceptSelected=  pieStateAllExceptSelected.subtractArrayById(pieStateSelected)
+
+        console.log("pieStateAllExceptSelected")
+        console.log(pieStateAllExceptSelected)
+        this.deleteAllAddedStylesheetRef()
+        this.addVisualPiesByPieState(pieStateAllExceptSelected)
+        this.addVisualPiesByPieState(pieStateSelected,true,"white")
+
+
+
+
+
+
+        /*console.log("pieStateSelected")
+        //pieState.reverse()
+        console.log(pieStateSelected)
+        var cbs = this.state.circle;
+        let pie
         console.log("before for loop before setting empty array")
         console.log(cbs)
         var styleSheetRef= this.state.styleSheetRef
@@ -115,63 +222,29 @@ class Root extends Component {
 
         console.log("styleSheetRef")
         console.log(styleSheetRef)
-        for(var key in pieState){
-            var styleSheetRefs = styleSheetRef.filter(function(v){
-                return v.objectId == pieState[key].id
+        for(var key in pieStateSelected){
+            console.log("pieState Selected KEY")
+            console.log(key)
+            console.log("pieStateSelected[key]")
+            console.log(pieStateSelected[key])
+            pieStateAllExceptSelected = pieStateAllExceptSelected.filter(function(v){
+                return v.id != pieStateSelected[key].id
             })
-            console.log("selection state index")
-            console.log(styleSheetRefs.reverse()) // sort styleSheetRefs descending for deletion
-            if(styleSheetRefs){
-                for(var key in styleSheetRefs){
-                    document.styleSheets[0].deleteRule(styleSheetRefs[key].styleSheetRef)
-                    console.log("deleting stylesheet ref")
-                    console.log(styleSheetRefs[key].styleSheetRef)
+            console.log("pieStateAllExceptSelected")
+            console.log(pieStateAllExceptSelected)
 
-                }
-            }
+
+
 
         }
 
-        /*console.log("styleSheetRef: ")
-        console.log(styleSheetRef)
-        console.log("document.styleSheets[0].cssRules")
-        console.log(document.styleSheets[0].cssRules)
-        console.log("document.styleSheets[0].cssRules.length")
-        console.log(document.styleSheets[0].cssRules.length)
-
-        cbs.push(<div key={0} className="pie big" data-start={data_start} data-value={data_value}></div>);
-
-        for(var key in pieState) {
-            var styleSheetRefObject = {
-                objectId :pieState[key].id,
-                styleSheetRef: document.styleSheets[0].cssRules.length
-            }
-            document.styleSheets[0].insertRule('.pie[data-key="' + (parseInt(key)+1) +'"]:BEFORE { background-color:'+pieState[key].color+' }', document.styleSheets[0].cssRules.length)
-
-            styleSheetRef.push(styleSheetRefObject);
+        console.log("all pie states")
+        console.log(pieStateAllMother)
+        console.log("except selected pie states")
+        console.log(pieStateAllExceptSelected)
+        //console.log(pieStateAllMother.subtractArrayById(pieStateSelectedMother))*/
 
 
-            styleSheetRefObject = {
-                objectId :pieState[key].id,
-                styleSheetRef: document.styleSheets[0].cssRules.length
-            }
-            document.styleSheets[0].insertRule('.pie[data-key="' + (parseInt(key)+1) +'"]:AFTER { background-color:'+pieState[key].color+' }', document.styleSheets[0].cssRules.length)
-
-            styleSheetRef.push(styleSheetRefObject);
-
-
-            if(pieState[key].angleValue>180){
-                cbs.push(<div id={"pie big"+(parseInt(key)+1)} data-key={parseInt(key)+1} key={parseInt(key)+1} className={pieState[key].className} data-start={pieState[key].startingAngle} data-value={pieState[key].angleValue}></div>);
-
-            } else {
-                cbs.push(<div id={"pie"+(parseInt(key)+1)} data-key={parseInt(key)+1} key={parseInt(key)+1} className={pieState[key].className} data-start={pieState[key].startingAngle} data-value={pieState[key].angleValue}></div>);
-
-            }
-        }
-        console.log("before setting circle")
-        console.log(styleSheetRef)
-        this.setState({styleSheetRef: styleSheetRef});
-        this.setState({circle: cbs});*/
     }
 
 
@@ -210,9 +283,17 @@ class Root extends Component {
         setTimeout(()=>{
             //console.log(this.props.actions.selection_local_selectPieObjectById(10))
 
-            console.log(this.props.actions.selection_local_selectPieObjectByAngle(30))
+           /* console.log(this.props.actions.selection_local_selectPieObjectByAngle(30))
             console.log(this.props.actions.selection_local_updateSelectedPiesAngleByAngle(0))
-            this.renderSelectiedPiesWithReduxSelectionState(this.props.selectionState)
+            this.renderSelectedPiesWithReduxSelectionState(this.props.pieState,this.props.selectionState)
+
+            console.log(this.props.actions.selection_local_updateSelectedPiesAngleByAngle(170))
+
+            this.renderSelectedPiesWithReduxSelectionState(this.props.pieState,this.props.selectionState)
+
+            console.log(this.props.actions.selection_local_updateSelectedPiesAngleByAngle(120))
+
+            this.renderSelectedPiesWithReduxSelectionState(this.props.pieState,this.props.selectionState)*/
 
         }, 1000);
  }
@@ -251,8 +332,14 @@ class Root extends Component {
 
         if(this.counter==1)
         {
-            alert(Math.round(pixelToDegree(x,y)))
-            this.props.actions.pie_local_getPieObjectById(0)
+
+            this.props.actions.selection_local_selectPieObjectByAngle(Math.round(pixelToDegree(x,y)))
+
+        }
+        if(this.counter>1)
+        {
+            this.props.actions.selection_local_updateSelectedPiesAngleByAngle(Math.round(pixelToDegree(x,y)))
+            this.renderSelectedPiesWithReduxSelectionState(this.props.pieState,this.props.selectionState)
         }
 
     }
