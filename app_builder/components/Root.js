@@ -122,7 +122,7 @@ class Root extends Component {
 
 
         }
-        var array_of_key = []
+       /* var array_of_key = []
         var location_of_conflict=[]
         for(var key_cbs in cbs){
             if (pieState.hasOwnProperty(key)) {
@@ -156,7 +156,7 @@ class Root extends Component {
         console.log(styleSheetRef)
         console.log("before setting circle CBS")
         console.log([...cbs])
-
+*/
         this.setState({styleSheetRef: styleSheetRef});
         this.setState({circle: [...cbs]});
 
@@ -180,10 +180,10 @@ class Root extends Component {
     }
 
     renderPieWithReduxPieState(pieStateMother){
-        let pieState = [...pieStateMother]
+        let pieState = pieStateMother
         this.deleteAllAddedStylesheetRef()
 
-        this.addVisualPiesByPieState([...pieState])
+        this.addVisualPiesByPieState(pieState)
 
     }
 
@@ -245,6 +245,18 @@ class Root extends Component {
         //console.log(pieStateAllMother.subtractArrayById(pieStateSelectedMother))*/
 
 
+    }
+
+
+    renderSelectedPiesWithReduxSelectionStateSecond(pieStateSelectedMother){
+
+        for(var key in pieStateSelectedMother){
+            if (pieStateSelectedMother.hasOwnProperty(key)) {
+                var id = pieStateSelectedMother[key].id + 1
+                var angle = pieStateSelectedMother[key].startingAngle
+                document.getElementById("pie" + id).setAttribute("data-start", angle);
+            }
+        }
     }
 
 
@@ -336,10 +348,11 @@ class Root extends Component {
             this.props.actions.selection_local_selectPieObjectByAngle(Math.round(pixelToDegree(x,y)))
 
         }
-        if(this.counter>1)
+        if(this.counter>1 && this.counter%10==0)
         {
             this.props.actions.selection_local_updateSelectedPiesAngleByAngle(Math.round(pixelToDegree(x,y)))
-            this.renderSelectedPiesWithReduxSelectionState(this.props.pieState,this.props.selectionState)
+            this.renderSelectedPiesWithReduxSelectionStateSecond(this.props.selectionState)
+            //this.renderSelectedPiesWithReduxSelectionState(this.props.pieState,this.props.selectionState)
         }
 
     }
